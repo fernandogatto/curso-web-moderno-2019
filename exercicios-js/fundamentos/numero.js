@@ -14,3 +14,4 @@ console.log('Media: ', media.toFixed(2));
 console.log('Media: ', media.toString());
 console.log('Media em binario: ', media.toString(2)); // em binario
 console.log(typeof media);
+console.log(typeof Number);
