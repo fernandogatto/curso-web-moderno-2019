@@ -6,3 +6,8 @@ console.log('Tamanho: ' + array.length);
 
 array.push(10, 5, 'teste', null);
 console.log(array);
+
+console.log(array.pop());
+console.log(array);
+
+console.log(typeof array);
