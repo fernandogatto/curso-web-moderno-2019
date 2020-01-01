@@ -8,5 +8,6 @@ console.log(nome.substring(1));
 console.log(nome.substring(0, 3));
 
 console.log('Nome '.concat(nome).concat('!'));
+console.log('Nome ' + nome + '!');
 
-console.log('Ana,Maria,Pedro'.split(','));
+console.log('Ana,Maria,Pedro'.split(',')); // converte para array separando por ','
