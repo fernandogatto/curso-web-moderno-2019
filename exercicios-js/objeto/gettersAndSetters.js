@@ -15,3 +15,8 @@ const pessoa = {
         this._idade = idade
     }
 }
+
+pessoa.nome = 'Abel' // set
+console.log(pessoa.nome) // get
+pessoa.idade = 26
+console.log(pessoa.idade)
