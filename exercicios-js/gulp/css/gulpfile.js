@@ -9,7 +9,7 @@ gulp.task('default', ['copiarHtml'], () => {
         .pipe(uglifycss({
             "uglyComments": true
         }))
-        .pipe(concat('style.min.css'))
+        .pipe(concat('estilo.min.css'))
         .pipe(gulp.dest('build/css'))
 })
 
