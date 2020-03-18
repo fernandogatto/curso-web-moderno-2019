@@ -1,15 +1,15 @@
+const { series, parallel } = require('gulp')
 const gulp = require('gulp')
-const util = require('gulp-util')
-const sequence = require('run-sequence')
 
-require('./gulpTasks/app')
-require('./gulpTasks/deps')
-require('./gulpTasks/servidor')
+const { appHtml, appCSS, appJS, appImg } = require('./gulpTasks/app')
+const { depsCSS, depsFonts } = require('./gulpTasks/deps')
+const { monitorarArquivos, servidor } = require('./gulpTasks/servidor')
 
-gulp.task('default', () => {
-    if(util.env.production) {
-        sequence('deps', 'app')
-    } else {
-        sequence('deps', 'app', 'servidor')
-    }
-})
+module.exports.default = series(
+    parallel(
+        series(appHtml, appCSS, appJS, appImg),
+        series(depsCSS, depsFonts)
+    ),
+    servidor,
+    monitorarArquivos
+)

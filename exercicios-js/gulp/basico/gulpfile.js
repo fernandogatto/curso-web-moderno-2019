@@ -1,22 +1,30 @@
 const gulp = require('gulp')
+const series = gulp.series
 
-gulp.task('default', () => {
-    gulp.start('copiar', 'fim')
-})
+function dependencia1(callback) {
+    console.log('Dep 1')
+    return callback()
+}
 
-gulp.task('copiar', ['dependencia1', 'dependencia2'], () => {
-    gulp.src(['pastaA/arquivo1.txt', 'pastaA/arquivo2.txt'])
-        .pipe(gulp.dest('pastaB'))
-})
+function dependencia2(callback) {
+    console.log('Dep 2')
+    return callback()
+}
 
-gulp.task('dependencia1', () => {
-    console.log('Dependencia 1')
-})
+function copiar(callback) {
+    console.log('Copiar')
+    gulp.src(['pastaA/*.txt']).pipe(gulp.dest('pastaB'))
+    return callback()
+}
 
-gulp.task('dependencia2', () => {
-    console.log('Dependencia 2')
-})
-
-gulp.task('fim', () => {
+function fim(callback) {
     console.log('Fim')
-})
+    return callback()
+}
+
+module.exports.default = series(
+    dependencia1,
+    dependencia2,
+    copiar,
+    fim
+)

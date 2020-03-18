@@ -1,17 +1,21 @@
 const gulp = require('gulp')
+const series = gulp.series
 const concat = require('gulp-concat') // concatenar varios arquivos em um so
-const uglify = require('gulp-uglify') // tirar espacos em branco
-const babel = require('gulp-babel')
+const uglify = require('gulp-uglify') // minifica
+const babel = require('gulp-babel') // translate
 
-gulp.task('default', () => {
-    return gulp.src('src/**/*.js')
+function padrao(callback) {
+    gulp.src('src/**/*.js')
         .pipe(babel({
-            // minified: true
             comments: false,
             presets: ["env"]
         }))
         .pipe(uglify())
-        .on('error', function(err) { console.log(err) })
-        .pipe(concat('concat.min.js'))
+        .pipe(concat('codigo.min.js'))
         .pipe(gulp.dest('build'))
-})
+    return callback()
+}
+
+module.exports.default = series(
+    padrao
+)
