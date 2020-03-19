@@ -1,5 +1,5 @@
 # curso-web-moderno-2019
-<a href="https://www.udemy.com/course/curso-web/" target="_blank">Curso Web Moderno com JavaScript</a> ministrado pela COD3R e Leonardo Leitão
+<a href="https://www.udemy.com/course/curso-web/" target="_blank">Curso Web Moderno com JavaScript</a> ministrado pela COD3R
 
 <ul>
   <li>Javascript: Fundamentos ✔</li>
@@ -14,10 +14,10 @@
   <li>HTML, CSS e JS + Projeto Flappy Bird ✔</li>
   <li>Ajax</li>
   <li>Gulp ✔</li>
-  <li>Webpack</li>
+  <li>Webpack ✔</li>
   <li>jQuery</li>
   <li>Bootstrap</li>
-  <li>Projeto Galeria (Bootstrap/jQuery/Webpack</li>
+  <li>Projeto Galeria (Bootstrap/jQuery/Webpack)</li>
   <li>React</li>
   <li>Projeto Calculadora</li>
   <li>Projeto Cadastro de usuário</li>
